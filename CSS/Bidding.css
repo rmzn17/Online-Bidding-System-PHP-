@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>My CV</title>
+<style>
+
+*{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+}
+
+.templete
+{
+    width: 1350px;
+}
+.clear{
+    overflow: hidden;
+}
+.bodysection
+{
+  
+}
+.mainsection {
+    background-color: lightgray;
+   width: 1344px;
+    padding: 30PX;
+    float: left;
+    margin: 10px;
+}
+
+
+
+</style>
+</head>
+</html>

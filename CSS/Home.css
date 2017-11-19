@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>My CV</title>
+<style>
+
+*{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+}
+
+.templete
+{
+    width: 1350px;
+}
+.clear{
+    overflow: hidden;
+}
+.bodysection
+{
+  
+}
+.mainsection {
+    background-color: lightgray;
+   width: 1000px;
+    padding: 30PX;
+    float: left;
+    margin: 10px;
+}
+
+.sidebar {
+    width: 305px;
+    background-color: #D3D3D3;
+    padding: 10px;
+    margin: 10px;
+    float: right;
+}
+
+.Semisidebar h2
+{
+   background-color: #2E2E32;
+   padding: 8px;
+   color: white;
+   margin-bottom: 10px;
+   border-bottom: 5px solid #939499;
+   text-align: center;
+}
+.Semisidebar p
+{
+
+}
+.Footer
+{
+
+}
+.Footer h2
+{
+
+}
+
+
+</style>
+</head>
+</html>

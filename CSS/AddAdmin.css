@@ -1,0 +1,67 @@
+body, html{
+    background-color:#34515E;
+   font-family: Agency FB;
+    
+
+}
+
+.register-form{
+    font-size: 16px;
+   left: 50%;
+    top: 50%;
+    position: absolute;
+    -webkit-transform: translate3d(-50%, -50%, 0);
+    -moz-transform: translate3d(-50%, -50%, 0);
+    transform: translate3d(-50%, -50%, 0);
+}
+
+.regbutton{    
+    height: 46px;
+    width: 430px;
+    background-color:tomato;
+    border-radius: 0px;
+    font-size: 18px;
+    color:white;
+    border: none !important;
+    margin-bottom: 5px;
+}
+.regbutton:hover{    
+    color: white;
+    background-color:#aa422f;
+}
+.regbutton:active{    
+    color: white;
+    background-color:#aa422f;
+}
+.logbutton{    
+    height: 50px;
+    width: 200px;
+    background-color:yellowgreen;
+    border-radius: 0px;
+    font-size: 18px;
+    color:white;
+    border: none !important;
+    margin-bottom: 5px;
+}
+.logbutton:hover{    
+    color: white;
+    background-color:darkolivegreen;
+}
+.logbutton:active{    
+    color: white;
+    background-color:darkolivegreen;
+}
+
+
+
+.register-form label{
+    color: aliceblue;
+    
+}
+.register-form input{
+    margin-bottom: 5px;
+    width: 430px;
+    height: 40px;
+    border-radius: 0px;
+    font-size: 25px;
+}
