@@ -157,7 +157,7 @@ function del(email)
      $connection= mysqli_connect($Server,$username,$psrd,$dbname); 
 
     $query="select * from ANotification";
-    $Result=mysqli_query($connection,$query);
+    $Result=mysqli_query($connection,$query) or die(mysqli_error($connection));;
     if(mysqli_num_rows($Result)>0){
    $not=mysqli_num_rows($Result);
 echo "<script> alert('Your Have $not New Notification'); </script>";

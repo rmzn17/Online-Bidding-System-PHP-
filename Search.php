@@ -100,7 +100,7 @@ function bid(id)
      $query="select * from Product where ProductName like '%".$search."%' OR CatagoryName like '%".$search."%' ";
     
 
-      $result=mysqli_query($connection,$query);
+      $result=mysqli_query($connection,$query) or die(mysqli_error($connection));
       $break=0;
 
       if(mysqli_num_rows($result)>0)

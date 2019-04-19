@@ -124,11 +124,11 @@ function validateCaseSensitiveEmail(email)
      
      
     
-       $query="select * from User where UserName='$uName' and Password='$Pass'";
+       $query="select * from users where UserName='$uName' and Password='$Pass'";
     
     
      
-      $Complete=mysqli_query($connection,$query) or die("unable to connect");
+      $Complete=mysqli_query($connection,$query)  or die(mysqli_error($connection));
          
     
     $Rows=mysqli_fetch_array($Complete);
@@ -158,9 +158,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
      $Phone=$_POST['Phone'];
      $Address=$_POST['Address'];
     
-     $query="update User set Name='$name',Password='$Password',Email='$Email',Phone='$Phone', Address='$Address' where UserName='$uName'";
+     $query="update users set Name='$name',Password='$Password',Email='$Email',Phone='$Phone', Address='$Address' where UserName='$uName'";
      
-      $Complete=mysqli_query($connection,$query) or die("unable to connect");
+      $Complete=mysqli_query($connection,$query) or die(mysqli_error($connection));;
 
       echo "<script>alert('Update Successfully');</script>";
          

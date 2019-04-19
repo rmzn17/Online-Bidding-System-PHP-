@@ -105,13 +105,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
      $Server="localhost";
      $username="root";
      $psrd="";
-     $dbname = "Bidding";
-     $connection= mysqli_connect($Server,$username,$psrd,$dbname);
+     $dbname = "bidding";
+     $connection= mysqli_connect($Server,$username,$psrd,$dbname)  or die(mysqli_error($Server));
      
      $uname=$_POST['uname'];
      $Pass=$_POST['Pass'];
     
-       $query="select * from User where UserName='$uname' and Password='$Pass'";
+       $query="select * from users where UserName='$uname' and Password='$Pass'";
     
     
      

@@ -51,11 +51,11 @@ font-family: Agency FB;
      $username="root";
      $psrd="";
      $dbname = "Bidding";
-     $connection= mysqli_connect($DATABASE,$username,$psrd,$dbname);
+     $connection= mysqli_connect($DATABASE,$username,$psrd,$dbname) or die(mysqli_error($Server));;
     
     $uname= $_SESSION['uname'];
    
-     $query="select * from User where UserName='$uname'";
+     $query="select * from users where UserName='$uname'";
       $Result=mysqli_query($connection,$query);
         
         $row = mysqli_fetch_array($Result);

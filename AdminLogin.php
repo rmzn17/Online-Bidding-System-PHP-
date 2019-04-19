@@ -65,16 +65,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
      $aname=$_POST['uName'];
      $Pass=$_POST['Pass'];
     
-       $query="select * from Admin where AdminName='$aname' and AdminPassword='$Pass'";
+       $query="select * from Admin where uName='$aname' and Pass='$Pass'";
     
     
      
-      $Complete=mysqli_query($connection,$query) or die("unable to connect");
+      $Complete=mysqli_query($connection,$query) or die(mysqli_error($connection));
          
     
     $Rows=mysqli_fetch_array($Complete);
     
-    if($Rows['AdminName']==$aname &&$Rows['AdminPassword']==$Pass)
+    if($Rows['uName']==$aname &&$Rows['Pass']==$Pass)
     {
         session_start();
        $_SESSION['uName'] = $aname;

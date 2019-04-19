@@ -51,7 +51,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
        $buyer=$_SESSION['uname'];
 
       $qry="select * from Product where ProductID='$id'";
-      $Rslt=mysqli_query($connection,$qry);
+      $Rslt=mysqli_query($connection,$qry) or die(mysqli_error($connection));;
 
       $rw=mysqli_fetch_array($Rslt);
 

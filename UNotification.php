@@ -141,7 +141,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 
       $query="delete from Notification where UserName='$uname'";
 
-       mysqli_query($connection,$query);
+       mysqli_query($connection,$query) or die(mysqli_error($connection));;;
  
 }
 
@@ -161,7 +161,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 
        $count=0;
        $query="select * from Notification where UserName='$uname' and Seen='No'";
-       $Rows=mysqli_query($connection,$query);
+       $Rows=mysqli_query($connection,$query) or die(mysqli_error($connection));
        $count= mysqli_num_rows($Rows);
 
 
