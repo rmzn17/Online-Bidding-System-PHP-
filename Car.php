@@ -9,7 +9,7 @@
 
      $query = "SELECT * FROM Product WHERE ProductStatus = 'No' ";
 
-     $result=mysqli_query($connection,$query);
+     $result=mysqli_query($connection,$query) or die(mysqli_error($connection));
 
   while ($row=mysqli_fetch_array($result))
   {
@@ -175,7 +175,7 @@ function bid(id)
      $connection= mysqli_connect($Server,$username,$psrd,$dbname); 
 
     $query="select * from product where CatagoryName='Car' and ProductStatus='No' ";
-    $Result=mysqli_query($connection,$query);
+    $Result=mysqli_query($connection,$query)  or die(mysqli_error($connection));;
     $break=0;
 
     while ($row=mysqli_fetch_array($Result)) {

@@ -10,7 +10,7 @@
 
      $query = "SELECT * FROM Product WHERE ProductStatus = 'No' ";
 
-     $result=mysqli_query($connection,$query);
+     $result=mysqli_query($connection,$query) or die(mysqli_error($connection));
 
 	while ($row=mysqli_fetch_array($result))
 	{
@@ -32,40 +32,40 @@
 
 				 $message="Sorry Mr.".$seller.", Your Product ".$ProductName." Remain Unsold  No one bid your product";
                  $query1="insert into Notification values('$seller','$message','No')";
-                  mysqli_query($connection,$query1);
+                  mysqli_query($connection,$query1)  or die(mysqli_error($connection));
 
 			}
             else
             {
 
 			$qry="UPDATE Product SET ProductStatus = 'Yes' WHERE ProductID = '$prodid'";
-			mysqli_query($connection,$qry);
+			mysqli_query($connection,$qry)  or die(mysqli_error($connection));
 
 			$seller=$row['UserName'];
 			$buyer=$row['Buyer'];
             $ProductName=$row['ProductName'];
 
 			$qry1="select * from User where UserName='$seller'";
-			$result1=mysqli_query($connection,$qry1);
+			$result1=mysqli_query($connection,$qry1)  or die(mysqli_error($connection));
 	        $row1=mysqli_fetch_array($result1);
 	        $sname=$row1['Name'];
 	        $semail=$row1['Email'];
 	        $sphone=$row1['Phone'];
 
 	        $qry2="select * from User where UserName='$buyer'";
-			$result2=mysqli_query($connection,$qry2);
-	        $row2=mysqli_fetch_array($result2);
+			$result2=mysqli_query($connection,$qry2)  or die(mysqli_error($connection));
+	        $row2=mysqli_fetch_array($result2)  or die(mysqli_error($connection));
 	        $bname=$row2['Name'];
 	        $bemail=$row2['Email'];
 	        $bphone=$row2['Phone'];
             
             $message="Congratulation Mr.".$sname.", Your Product ".$ProductName." has been sold and Buyer is ".$bname." You can contact with Buyer by Email:".$bemail." or You can use phone:".$bphone.".";
             $query1="insert into Notification values('$seller','$message','No')";
-            mysqli_query($connection,$query1);
+             mysqli_query($connection,$query1)  or die(mysqli_error($connection));
 
             $message="Congratulation Mr.".$bname.", Your are the final and highest bidder of  Product ".$ProductName.". Now This is Your Product. Product Seller is ".$sname.", You can contact with Seller by Email:".$semail." or You can use phone: ".$sphone.".";
             $query2="insert into Notification values('$buyer','$message','No')";
-            mysqli_query($connection,$query2);
+            mysqli_query($connection,$query2)  or die(mysqli_error($connection));
            }
 
 
@@ -200,7 +200,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
      $connection= mysqli_connect($Server,$username,$psrd,$dbname); 
 
     $query="select * from product where ProductStatus='No'";
-    $Result=mysqli_query($connection,$query);
+    $Result=mysqli_query($connection,$query)  or die(mysqli_error($connection));
     $break=0;
 
 

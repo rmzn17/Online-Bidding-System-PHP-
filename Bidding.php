@@ -85,7 +85,7 @@ function bid(id)
      $connection= mysqli_connect($Server,$username,$psrd,$dbname); 
 $uname=$_SESSION['uname'];
   $query="select * from product where ProductStatus='No' and UserName!='$uname'";
-    $Result=mysqli_query($connection,$query);
+    $Result=mysqli_query($connection,$query) or die(mysqli_error($connection));
     $break=0;
 
     while ($row=mysqli_fetch_array($Result)) {

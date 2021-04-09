@@ -160,7 +160,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
          move_uploaded_file($filename, $destination);
 
-         $query="insert into User(Name,UserName,Password,Email,Phone,Gender,DOB,Address,Photo) values('$name','$uname','$Password','$email','$phone','$gender','$dob','$address','$destination')";
+         $query="insert into users(Name,UserName,Password,Email,Phone,Gender,DOB,Address,Photo) values('$name','$uname','$Password','$email','$phone','$gender','$dob','$address','$destination')";
          $ret= mysqli_query($connection,$query);
       
         echo '<script language="javascript">';

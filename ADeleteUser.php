@@ -147,18 +147,14 @@ function delete(id)
 
 <?php
 
-
-
-
-
     $Server="localhost";
      $username="root";
      $psrd="";
      $dbname = "Bidding";
      $connection= mysqli_connect($Server,$username,$psrd,$dbname); 
 
-    $query="select * from User";
-    $Result=mysqli_query($connection,$query);
+    $query="select * from users";
+    $Result=mysqli_query($connection,$query) or die(mysqli_error($connection));
    while ($row=mysqli_fetch_array($Result))
     {
          echo "<tr>";

@@ -9,7 +9,7 @@
 
      $query = "SELECT * FROM Product WHERE ProductStatus = 'No' ";
 
-     $result=mysqli_query($connection,$query);
+     $result=mysqli_query($connection,$query) or die(mysqli_error($connection));;
 
   while ($row=mysqli_fetch_array($result))
   {
