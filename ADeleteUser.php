@@ -151,40 +151,39 @@ function delete(id)
 
 
 
-    $Server="localhost";
-     $username="root";
-     $psrd="";
-     $dbname = "Bidding";
-     $connection= mysqli_connect($Server,$username,$psrd,$dbname); 
+$Server = "localhost";
+$username = "root";
+$psrd = "";
+$dbname = "Bidding";
+$connection = mysqli_connect($Server, $username, $psrd, $dbname);
 
-    $query="select * from User";
-    $Result=mysqli_query($connection,$query);
-   while ($row=mysqli_fetch_array($Result))
-    {
-         echo "<tr>";
-          echo "<td>";
-         echo "<img style='width:100px;height:100px' src='".$row['Photo']."'>";
-           echo "</td>";
-           echo "<td>";
-          echo $row['Name'];
-           echo "</td>";
-          echo "<td>";
-         echo $row['Email'];
-         echo "</td>";
-          echo "<td>";
-          echo $row['Gender'];
-           echo "</td>";
-          echo "<td>";
-          echo $row['Address'];
-           echo "</td>";
-            echo "<td>";
-            $name=$row[1];
-         
-         echo"<a href=javascript:delete('$name')> <img src='Image/Delete.jpg'  width='50px' height='50px' alt='Bid'/> </a>";
-          echo "</td>";
-          echo "</tr>";
+$query = "select * from Users";
+$Result = mysqli_query($connection, $query);
+while ($row = mysqli_fetch_array($Result)) {
+  echo "<tr>";
+  echo "<td>";
+  echo "<img style='width:100px;height:100px' src='" . $row['Photo'] . "'>";
+  echo "</td>";
+  echo "<td>";
+  echo $row['Name'];
+  echo "</td>";
+  echo "<td>";
+  echo $row['Email'];
+  echo "</td>";
+  echo "<td>";
+  echo $row['Gender'];
+  echo "</td>";
+  echo "<td>";
+  echo $row['Address'];
+  echo "</td>";
+  echo "<td>";
+  $name = $row[1];
+
+  echo "<a href=javascript:delete('$name')> <img src='Image/Delete.jpg'  width='50px' height='50px' alt='Bid'/> </a>";
+  echo "</td>";
+  echo "</tr>";
 }
-    ?>
+?>
 </tbody>
 </table>
 </form>

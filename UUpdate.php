@@ -185,7 +185,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <p><input type="text" name="Address" placeholder="Your Address" value="<?php echo $address; ?>"></p>
     <p><input type="submit" value="Update Now"></p>
   </form>
-</div>>
+</div>
     </div>
 </div>
 
