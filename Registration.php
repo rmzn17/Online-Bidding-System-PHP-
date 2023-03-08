@@ -8,7 +8,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
    <link rel="stylesheet" type="text/css" href="CSS/userReg.css">
-		<title>Bidding System</title>
+    <title>Bidding System</title>
 
 
   <style>
@@ -24,10 +24,10 @@ font-family: Agency FB;
 </style>
 
 <script type="text/javascript">
-	
+  
 
-	function RegisterValid()
-	{
+  function RegisterValid()
+  {
 
 
     var Name     =Registerform.name;
@@ -136,41 +136,41 @@ function validateCaseSensitiveEmail(email)
 
 </head>
 <body>
-<?php 
+<?php
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $Server="localhost";
-		 $username="root";
-		 $psrd="";
-		 $dbname = "Bidding";
-		 $connection= mysqli_connect($Server,$username,$psrd,$dbname);
+  $Server = "localhost";
+  $username = "root";
+  $psrd = "";
+  $dbname = "Bidding";
+  $connection = mysqli_connect($Server, $username, $psrd, $dbname);
 
-         $name     =$_POST['name'];
-         $uname    =$_POST['uname'];
-         $Password =$_POST['password'];
-         $email    =$_POST['email'];
-         $phone    =$_POST['phone'];
-         $dob      =$_POST['dob'];
-         $gender   =$_POST['gender'];
-         $address  =$_POST['address'];
+  $name = $_POST['name'];
+  $uname = $_POST['uname'];
+  $Password = $_POST['password'];
+  $email = $_POST['email'];
+  $phone = $_POST['phone'];
+  $dob = $_POST['dob'];
+  $gender = $_POST['gender'];
+  $address = $_POST['address'];
 
 
-         $destination = "UserPhoto/".$_FILES['image']['name'];
-         $filename    = $_FILES['image']['tmp_name'];  
+  $destination = "UserPhoto/" . $_FILES['image']['name'];
+  $filename = $_FILES['image']['tmp_name'];
 
-         move_uploaded_file($filename, $destination);
+  move_uploaded_file($filename, $destination);
 
-         $query="insert into User(Name,UserName,Password,Email,Phone,Gender,DOB,Address,Photo) values('$name','$uname','$Password','$email','$phone','$gender','$dob','$address','$destination')";
-         $ret= mysqli_query($connection,$query);
-      
-        echo '<script language="javascript">';
-        echo 'alert("Registration successfully")';
-        echo '</script>';
-      } 
+  $query = "insert into Users(Name,UserName,Password,Email,Phone,Gender,DOB,Address,Photo) values('$name','$uname','$Password','$email','$phone','$gender','$dob','$address','$destination')";
+  $ret = mysqli_query($connection, $query);
+
+  echo '<script language="javascript">';
+  echo 'alert("Registration successfully")';
+  echo '</script>';
+}
 
 ?>
 
-	<nav class="navbar navbar-inverse" data-spy="affix" data-offset-top="197">
+  <nav class="navbar navbar-inverse" data-spy="affix" data-offset-top="197">
   <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand" href="#">Kinbo.Com</a>
@@ -183,7 +183,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           <li><a href="Mobile.php"><b>Mobile</b></a></li>
           <li><a href="Computer.php"><b>Computer</b></a></li>
         </ul>
-		     
+         
       </li>
      
      
@@ -199,8 +199,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       </div>
     </form>
     </ul>
-	
-	
+  
+  
    <ul class="nav navbar-nav navbar-right">
    <li><a href="About Project.php"><b>About site</b></a></li>
     <li><a href="Contact Us.php"><b>Contact Us</b></a></li>
@@ -217,111 +217,111 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </nav>
   
 
-		<div class="container">
-			<div class="row main">
-				<div class="main-login main-center">
-				<h3>User Registration Form</h5>
-					<form method="POST"  enctype="multipart/form-data" name="Registerform"  onsubmit="return RegisterValid();" >
-						
-						<div class="form-group">
-							
-							<div class="cols-sm-10">
-								<div class="input-group">
-									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-									<input type="text" class="form-control" name="name" id="name"  placeholder="Enter your Name"/>
-								</div>
-							</div>
-						</div>
-					    <div class="form-group">
-							
-							<div class="cols-sm-10">
-								<div class="input-group">
-									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-									<input type="text" class="form-control" name="uname" id="uname"  placeholder="Enter your User Name"/>
-								</div>
-							</div>
-						</div>
+    <div class="container">
+      <div class="row main">
+        <div class="main-login main-center">
+        <h3>User Registration Form</h5>
+          <form method="POST"  enctype="multipart/form-data" name="Registerform"  onsubmit="return RegisterValid();" >
+            
+            <div class="form-group">
+              
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                  <input type="text" class="form-control" name="name" id="name"  placeholder="Enter your Name"/>
+                </div>
+              </div>
+            </div>
+              <div class="form-group">
+              
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                  <input type="text" class="form-control" name="uname" id="uname"  placeholder="Enter your User Name"/>
+                </div>
+              </div>
+            </div>
 
-						<div class="form-group">
-							
-							<div class="cols-sm-10">
-								<div class="input-group">
-									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-									<input type="password" class="form-control" name="password" id="password"  placeholder="Enter your Password"/>
-								</div>
-							</div>
-						</div>
+            <div class="form-group">
+              
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                  <input type="password" class="form-control" name="password" id="password"  placeholder="Enter your Password"/>
+                </div>
+              </div>
+            </div>
 
 
-						<div class="form-group">
-							
-							<div class="cols-sm-10">
-								<div class="input-group">
-									<span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-									<input type="text" class="form-control" name="email" id="email"  placeholder="Enter your Email"/>
-								</div>
-							</div>
-						</div>
+            <div class="form-group">
+              
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+                  <input type="text" class="form-control" name="email" id="email"  placeholder="Enter your Email"/>
+                </div>
+              </div>
+            </div>
 
-						<div class="form-group">
-							
-							<div class="cols-sm-10">
-								<div class="input-group">
-									<span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-									<input type="text" class="form-control" name="phone"  placeholder="Enter your Phone Number"/>
-								</div>
-							</div>
-						</div>
-							
-
-                        <div class="form-group">
-							
-							<div class="cols-sm-10">
-								<div class="input-group">
-									<span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-									<input type="date" class="form-control" name="dob"/>
-								</div>
-							</div>
-						</div>
+            <div class="form-group">
+              
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+                  <input type="text" class="form-control" name="phone"  placeholder="Enter your Phone Number"/>
+                </div>
+              </div>
+            </div>
+              
 
                         <div class="form-group">
-							
-							<div class="cols-sm-10">
-								<div class="input-group">
-									<span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-									<input type="text" class="form-control" name="address" placeholder="Your Address" />
-								</div>
-							</div>
-						</div>
+              
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+                  <input type="date" class="form-control" name="dob"/>
+                </div>
+              </div>
+            </div>
+
+                        <div class="form-group">
+              
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+                  <input type="text" class="form-control" name="address" placeholder="Your Address" />
+                </div>
+              </div>
+            </div>
                             <div class="form-group">
-							<label  class="cols-sm-2 control-label">Your Gender</label>
-							<div class="cols-sm-10">
-								<div class="input-group">
-									
-									<input type="radio" name="gender" value="Male" />Male
-									<input type="radio" name="gender" value="Female" />Female
-								</div>
-							</div>
-						</div>
-						  <div class="form-group">
-							<label class="cols-sm-2 control-label">Your Profile Picture</label>
-							<div class="cols-sm-10">
-								<div class="input-group">
-								
-									<input type="file" name="image">
-								</div>
-							</div>
-						</div>
+              <label  class="cols-sm-2 control-label">Your Gender</label>
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  
+                  <input type="radio" name="gender" value="Male" />Male
+                  <input type="radio" name="gender" value="Female" />Female
+                </div>
+              </div>
+            </div>
+              <div class="form-group">
+              <label class="cols-sm-2 control-label">Your Profile Picture</label>
+              <div class="cols-sm-10">
+                <div class="input-group">
+                
+                  <input type="file" name="image">
+                </div>
+              </div>
+            </div>
 
-						<div class="form-group ">
-							<input  type="submit" id="button" class="btn btn-primary btn-lg btn-block login-button">
-						</div>
-						
-					</form>
-				</div>
-			</div>
-		</div>
+            <div class="form-group ">
+              <input  type="submit" id="button" class="btn btn-primary btn-lg btn-block login-button">
+            </div>
+            
+          </form>
+        </div>
+      </div>
+    </div>
 
-	
-	</body>
+  
+  </body>
 </html>

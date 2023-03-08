@@ -113,57 +113,57 @@ function validateCaseSensitiveEmail(email)
 </nav>
 
 <?php
-    $uName= $_SESSION['uname'];
-     $Pass= $_SESSION['Pass'];
+$uName = $_SESSION['uname'];
+$Pass = $_SESSION['Pass'];
 
-     $Server="localhost";
-     $username="root";
-     $psrd="";
-     $dbname = "Bidding";
-     $connection= mysqli_connect($Server,$username,$psrd,$dbname);
-     
-     
-    
-       $query="select * from User where UserName='$uName' and Password='$Pass'";
-    
-    
-     
-      $Complete=mysqli_query($connection,$query) or die("unable to connect");
-         
-    
-    $Rows=mysqli_fetch_array($Complete);
+$Server = "localhost";
+$username = "root";
+$psrd = "";
+$dbname = "Bidding";
+$connection = mysqli_connect($Server, $username, $psrd, $dbname);
 
-    $name=$Rows['Name'];
-    $email=$Rows['Email'];
-    $phone=$Rows['Phone'];
-    $address=$Rows['Address'];;
+
+
+$query = "select * from Users where UserName='$uName' and Password='$Pass'";
+
+
+
+$Complete = mysqli_query($connection, $query) or die("unable to connect");
+
+
+$Rows = mysqli_fetch_array($Complete);
+
+$name = $Rows['Name'];
+$email = $Rows['Email'];
+$phone = $Rows['Phone'];
+$address = $Rows['Address'];
+;
 
 ?>
 
 
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") 
-{
-    $uName= $_SESSION['uname'];
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  $uName = $_SESSION['uname'];
 
-     $Server="localhost";
-     $username="root";
-     $psrd="";
-     $dbname = "Bidding";
-     $connection= mysqli_connect($Server,$username,$psrd,$dbname);
-     
-     $name=$_POST['Name'];
-     $Password=$_POST['Password'];
-     $Email=$_POST['Email'];
-     $Phone=$_POST['Phone'];
-     $Address=$_POST['Address'];
-    
-     $query="update User set Name='$name',Password='$Password',Email='$Email',Phone='$Phone', Address='$Address' where UserName='$uName'";
-     
-      $Complete=mysqli_query($connection,$query) or die("unable to connect");
+  $Server = "localhost";
+  $username = "root";
+  $psrd = "";
+  $dbname = "Bidding";
+  $connection = mysqli_connect($Server, $username, $psrd, $dbname);
 
-      echo "<script>alert('Update Successfully');</script>";
-         
+  $name = $_POST['Name'];
+  $Password = $_POST['Password'];
+  $Email = $_POST['Email'];
+  $Phone = $_POST['Phone'];
+  $Address = $_POST['Address'];
+
+  $query = "update Users set Name='$name',Password='$Password',Email='$Email',Phone='$Phone', Address='$Address' where UserName='$uName'";
+
+  $Complete = mysqli_query($connection, $query) or die("unable to connect");
+
+  echo "<script>alert('Update Successfully');</script>";
+
 }
 ?>
 
@@ -178,11 +178,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
   <h2 class="login-header">Update Profile</h2>
   <form class="login-container" method="post" action="" name="ContactForm" onsubmit="return ValidateContactForm();">
 
-     <p><input type="text" name="Name" placeholder="Your Name"value="<?php echo $name;?>"></p>
+     <p><input type="text" name="Name" placeholder="Your Name"value="<?php echo $name; ?>"></p>
     <p><input type="password" placeholder="New Password" name="Password"></p>
-    <p><input type="Email" name="Email" placeholder="Your Email" value="<?php echo $email;?>"></p>
-    <p><input type="text" name="Phone" placeholder="Your Phone Number"value="<?php echo $phone;?>"></p>
-    <p><input type="text" name="Address" placeholder="Your Address" value="<?php echo $address;?>"></p>
+    <p><input type="Email" name="Email" placeholder="Your Email" value="<?php echo $email; ?>"></p>
+    <p><input type="text" name="Phone" placeholder="Your Phone Number"value="<?php echo $phone; ?>"></p>
+    <p><input type="text" name="Address" placeholder="Your Address" value="<?php echo $address; ?>"></p>
     <p><input type="submit" value="Update Now"></p>
   </form>
 </div>>

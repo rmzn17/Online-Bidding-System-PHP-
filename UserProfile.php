@@ -47,33 +47,33 @@ font-family: Agency FB;
 </nav>
   
 <?php
-    $DATABASE="localhost";
-     $username="root";
-     $psrd="";
-     $dbname = "Bidding";
-     $connection= mysqli_connect($DATABASE,$username,$psrd,$dbname);
-    
-    $uname= $_SESSION['uname'];
-   
-     $query="select * from User where UserName='$uname'";
-      $Result=mysqli_query($connection,$query);
-        
-        $row = mysqli_fetch_array($Result);
+$DATABASE = "localhost";
+$username = "root";
+$psrd = "";
+$dbname = "Bidding";
+$connection = mysqli_connect($DATABASE, $username, $psrd, $dbname);
 
-        echo "<div align='center'>";
-          echo "<img style='margin:2% auto auto 2%;float:center;border:3px solid black;border-radius:20px;width:250px;height:220px' src='".$row['Photo']."'>";
-         echo "</div>";
-              echo "<div align='center'>";
-              echo "<h1 style'margin:2% auto auto 40%;float:right;' >";
-              echo $row['Name'];
-              echo "<br>";
-              echo $row['Email'];
-              echo "<br>";
-              echo $row['Address'];
-              echo "<br>";
-              echo "</div>";
-           
-         echo"</div>";   
+$uname = $_SESSION['uname'];
+
+$query = "select * from Users where UserName='$uname'";
+$Result = mysqli_query($connection, $query);
+
+$row = mysqli_fetch_array($Result);
+
+echo "<div align='center'>";
+echo "<img style='margin:2% auto auto 2%;float:center;border:3px solid black;border-radius:20px;width:250px;height:220px' src='" . $row['Photo'] . "'>";
+echo "</div>";
+echo "<div align='center'>";
+echo "<h1 style'margin:2% auto auto 40%;float:right;' >";
+echo $row['Name'];
+echo "<br>";
+echo $row['Email'];
+echo "<br>";
+echo $row['Address'];
+echo "<br>";
+echo "</div>";
+
+echo "</div>";
 
 ?>
 </body>

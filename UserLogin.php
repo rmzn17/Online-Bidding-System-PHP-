@@ -2,7 +2,7 @@
 
 <html>
 <head>
-	<title>Bidding System</title>
+  <title>Bidding System</title>
     <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -27,32 +27,32 @@ table
 
 body 
 {
-	  background-color: lightgray;
-	   
+    background-color: lightgray;
+     
         font-family: Agency FB;
-		
+    
 }
 
 
  .size 
-	 {
-		 width: 250px; 
-		 height: 30px;
-		 padding: 2px
-	 }
-	 
-	 .Error 
-	 {
-		 color: red;
+   {
+     width: 250px; 
+     height: 30px;
+     padding: 2px
+   }
+   
+   .Error 
+   {
+     color: red;
      }
 
 div.temp
 {
-	  margin:4% auto auto 20%;
+    margin:4% auto auto 20%;
 }
 td
 {
-	 
+   
    font-size:35px;
    border-width:10px;
 
@@ -97,48 +97,44 @@ text-align:center;
 <body>
 
 
-<?php 
+<?php
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") 
-{
-   
-     $Server="localhost";
-     $username="root";
-     $psrd="";
-     $dbname = "Bidding";
-     $connection= mysqli_connect($Server,$username,$psrd,$dbname);
-     
-     $uname=$_POST['uname'];
-     $Pass=$_POST['Pass'];
-    
-       $query="select * from User where UserName='$uname' and Password='$Pass'";
-    
-    
-     
-      $Complete=mysqli_query($connection,$query) or die("unable to connect");
-         
-    
-    $Rows=mysqli_fetch_array($Complete);
-    
-    if($Rows['UserName']==$uname &&$Rows['Password']==$Pass)
-    {
-        session_start();
-        $_SESSION['uname'] = $uname;
-        $_SESSION['Pass'] = $Pass;
-        header("Location:UserProfile.php");
-         exit();
-     
-    }
-    else
-    {
-      
-      echo "<script>window.alert('Wrong User Name Or Password Try Again');</script>";
-    }
-    
-      mysqli_close($connection);                     
-   }
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-	
+  $Server = "localhost";
+  $username = "root";
+  $psrd = "";
+  $dbname = "Bidding";
+  $connection = mysqli_connect($Server, $username, $psrd, $dbname);
+
+  $uname = $_POST['uname'];
+  $Pass = $_POST['Pass'];
+
+  $query = "select * from Users where UserName='$uname' and Password='$Pass'";
+
+
+
+  $Complete = mysqli_query($connection, $query) or die("unable to connect");
+
+
+  $Rows = mysqli_fetch_array($Complete);
+
+  if ($Rows['UserName'] == $uname && $Rows['Password'] == $Pass) {
+    session_start();
+    $_SESSION['uname'] = $uname;
+    $_SESSION['Pass'] = $Pass;
+    header("Location:UserProfile.php");
+    exit();
+
+  } else {
+
+    echo "<script>window.alert('Wrong User Name Or Password Try Again');</script>";
+  }
+
+  mysqli_close($connection);
+}
+
+
 
 ?>
 
