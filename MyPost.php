@@ -65,7 +65,7 @@ $connection = mysqli_connect($Server, $username, $psrd, $dbname);
  </div>
 </form>
 
-<div class="overflow-x-auto max-w-4xl">
+<div class="overflow-x-auto max-w-4xl mx-auto mt-10">
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -81,40 +81,40 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $Rows = mysqli_query($connection, $query);
 
     if (mysqli_num_rows($Rows) > 0) { ?>
-          <table class="table w-full">
-          <thead>
-          <tr>
-          <th>Catagory </th>
-          <th>Photo </th>
-          <th>Product Name</th>
-          <th>Price</th>
-          <th>Sold or Not?</th>
-          <th>Start Date</th>
-          <th>End Date</th>
-          </tr>
-          </thead>
+                      <table class="table w-full">
+                      <thead>
+                      <tr>
+                      <th>Catagory </th>
+                      <th>Photo </th>
+                      <th>Product Name</th>
+                      <th>Price</th>
+                      <th>Sold or Not?</th>
+                      <th>Start Date</th>
+                      <th>End Date</th>
+                      </tr>
+                      </thead>
 
-          <tbody>
+                      <tbody>
 
-          <?php while ($row = mysqli_fetch_array($Rows)) { ?>
+                      <?php while ($row = mysqli_fetch_array($Rows)) { ?>
 
-            <tr>
-                <td><?php echo $row['CatagoryName'] ?></td>
-                <td> <img style="width:100px;height:100px" src='<?php echo $row['Image'] ?> '>;
-                <td><?php echo $row['ProductName'] ?></td>
-                  <td><?php echo $row['Price'] ?></td>
-                  <td><?php echo $row['ProductStatus'] ?></td>
+                            <tr>
+                                <td><?php echo $row['CatagoryName'] ?></td>
+                                <td> <img style="width:100px;height:100px" src='<?php echo $row['Image'] ?> '>;
+                                <td><?php echo $row['ProductName'] ?></td>
+                                  <td><?php echo $row['Price'] ?></td>
+                                  <td><?php echo $row['ProductStatus'] ?></td>
 
-                <td>
-                  <?php $row['StartDate'] ?>
-                </td>
+                                <td>
+                                  <?php $row['StartDate'] ?>
+                                </td>
 
 
-                <td>
-                  <?php $row['EndDate'] ?>
-                </td>
-            </tr>
-        <?php }
+                                <td>
+                                  <?php $row['EndDate'] ?>
+                                </td>
+                            </tr>
+                    <?php }
     } else {
       echo "<script> window.alert('You Have Not Any Post Yet');</script>";
     }
@@ -125,41 +125,41 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $Rows = mysqli_query($connection, $query);
 
     if (mysqli_num_rows($Rows) > 0) { ?>
-                <table class="table w-full">
-                <thead>
-                <tr>
-                <th>Catagory </th>
-                <th>Photo </th>
-                <th>Product Name</th>
-                <th>Price</th>
-                <th>Sold or Not?</th>
-                <th>Start Date</th>
-                <th>End Date</th>
-                </tr>
-                </thead>
+                            <table class="table w-full">
+                            <thead>
+                            <tr>
+                            <th>Catagory </th>
+                            <th>Photo </th>
+                            <th>Product Name</th>
+                            <th>Price</th>
+                            <th>Sold or Not?</th>
+                            <th>Start Date</th>
+                            <th>End Date</th>
+                            </tr>
+                            </thead>
 
-                <tbody>
+                            <tbody>
 
-                <?php while ($row = mysqli_fetch_array($Rows)) { ?>
+                            <?php while ($row = mysqli_fetch_array($Rows)) { ?>
 
-                    <tr>
-                        <td><?php echo $row['CatagoryName'] ?></td>
-                        <td> <img style="width:100px;height:100px" src=' <?php echo $row['Image'] ?> '>
-                        <td><?php echo $row['ProductName'] ?></td>
+                                    <tr>
+                                        <td><?php echo $row['CatagoryName'] ?></td>
+                                        <td> <img style="width:100px;height:100px" src=' <?php echo $row['Image'] ?> '>
+                                        <td><?php echo $row['ProductName'] ?></td>
 
-                          <td><?php echo $row['Price'] ?></td>
-                          <td><?php echo $row['ProductStatus'] ?></td>
+                                          <td><?php echo $row['Price'] ?></td>
+                                          <td><?php echo $row['ProductStatus'] ?></td>
 
-                        <td>
-                          <?php echo $row['StartDate'] ?>
-                        </td>
+                                        <td>
+                                          <?php echo $row['StartDate'] ?>
+                                        </td>
 
 
-                        <td>
-                          <?php echo $row['EndDate'] ?>
-                        </td>
-                    </tr>
-                <?php }
+                                        <td>
+                                          <?php echo $row['EndDate'] ?>
+                                        </td>
+                                    </tr>
+                            <?php }
     } else {
       echo "<script> window.alert('You Have Not Any Post Yet On this Catagory');</script>";
     }
