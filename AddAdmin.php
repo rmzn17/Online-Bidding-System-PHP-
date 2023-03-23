@@ -3,22 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bidding System</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-  <link rel="stylesheet" type="text/css" href="CSS/AddAdmin.css">
-
-  <style>
-
- body {
-font-family: Agency FB;
-}
-
-</style>
+ <?php require_once("layout/head-content.php") ?>
 
 <script type="text/javascript">
 
@@ -73,80 +58,56 @@ return true;
 
 <?php
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") 
-{
-     $Server="localhost";
-     $username="root";
-     $psrd="";
-     $dbname = "Bidding";
-     $connection= mysqli_connect($Server,$username,$psrd,$dbname);
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  $Server = "localhost";
+  $username = "root";
+  $psrd = "";
+  $dbname = "Bidding";
+  $connection = mysqli_connect($Server, $username, $psrd, $dbname);
 
-        
-          $uname    =$_POST['username'];
-          $Password =$_POST['password'];
-          $email    =$_POST['email'];
 
-          $query="insert into Admin(AdminName,AdminPassword,AdminEmail) values('$uname','$Password','$email')";
-          mysqli_query($connection,$query);
-      
-          echo '<script language="javascript">';
-          echo 'alert("Added successfully")';
-          echo '</script>';     
+  $uname = $_POST['username'];
+  $Password = $_POST['password'];
+  $email = $_POST['email'];
+
+  $query = "insert into Admin(AdminName,AdminPassword,AdminEmail) values('$uname','$Password','$email')";
+  mysqli_query($connection, $query);
+
+  echo '<script language="javascript">';
+  echo 'alert("Added successfully")';
+  echo '</script>';
 }
 
 ?>
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">Kinbo.Com</a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li><a href="AdminMagane.php"><b>&nbsp&nbsp&nbsp&nbspHome</b></a></li>
+<?php require_once("layout/admin-nav.php") ?>
   
-      <li class="active"><a href="AddAdmin.php"><b>Add Admin</b></a></li>
-      <li><a href="ADeleteUser.php"><b>Delete User</b></a></li>
-      <li><a href="ADeletePost.php"><b>Delete Post</b></a></li>
-      <li><a href="ANotification.php"><b>Notification</b></a></li>
-    </ul>
 
-   <ul class="nav navbar-nav navbar-right">
-      <li><a href="ULogout.php"><span class="glyphicon glyphicon-user"></span> <b>Logout</b></a></li>
-     
-    </ul>
-  </div>
-</nav>
-  
-<div class="container-fluid">
-   <form  class="register-form" method="POST" name="AAdmin"> 
-      <div class="row">      
-           <div class="col-md-4 col-sm-4 col-lg-4">
+   <form  class="max-w-xl mx-auto mt-10" method="POST" name="AAdmin"> 
+           
+           <div class="flex flex-col">
               <label for="Username">ADMINNAME</label>
-               <input type="text" name="username" class="form-control">    
+               <input type="text" name="username" class="input input-bordered">    
            </div>            
-      </div>
+  
 
-       <div class="row">
-           <div class="col-md-4 col-sm-4 col-lg-4">
+       
+           <div class="flex flex-col">
               <label for="password">PASSWORD</label>
-               <input type="password" name="password" class="form-control" >             
+               <input type="password" name="password" class="input input-bordered" >             
            </div>            
-      </div>
-      <div class="row">
-           <div class="col-md-4 col-sm-4 col-lg-4">
+      
+  
+           <div class="flex flex-col">
               <label for="email">EMAIL</label>
-               <input type="email" name="email" class="form-control">             
+               <input type="email" name="email" class="input input-bordered">             
            </div>            
-      </div>
-     
-      <hr>
-      <div class="row">
-        
-            <div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
-              <input  type="submit" class="btn btn-default regbutton" onclick=" return validadmin();" >
+
+            <div class="mt-10">
+              <input  type="submit" class="btn btn-primary" onclick=" return validadmin();" >
             </div>   
-      </div>    
+        
     </form>
-</div>
+
 </body>
 </html>
 
