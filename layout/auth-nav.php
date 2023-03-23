@@ -40,7 +40,7 @@
             Bidding
             <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
           </a>
-          <ul class="p-2">
+          <ul class="p-2 bg-base-100 shadow-2xl">
             <li><a href="MyBid.php">Others</a></li>
             <li><a href="Bidding.php">My biddings</a></li>
           </ul>
@@ -50,7 +50,7 @@
             Post
             <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
           </a>
-          <ul class="p-2">
+          <ul class="p-2 bg-base-100 shadow-2xl">
             <li><a href="UserPost.php">Others</a></li>
             <li><a href="MyPost.php">My Post</a></li>
           </ul>
