@@ -77,30 +77,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <?php require_once "layout/nav.php" ?>
 
-<div class="container max-w-[300px] mx-auto my-10">
-   
-        
-            <h1 class="text-center text-2xl"><b>Sign in to continue</b></h1>
-           
-            <div className="avatar justify-center">
-              <div className="w-12 rounded-full">
-              <img  src="Image/user.png" alt="">
-              </div>
-            </div>
-                
-                <form class="space-y-3" action="" method="POST" name="UserLogin" onsubmit="return ValidUser();">
-                  <input type="text" class="input input-bordered block w-full" name="uname" placeholder="Enter User Name">
-                  <input type="password" class="input input-bordered block w-full" name="Pass" placeholder="Password....">
-                  <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-                  <div class="form-control">
-  <label class="label cursor-pointer">
-    <span class="label-text">Remember me</span> 
-    <input type="checkbox" class="checkbox checkbox-primary" value="remember-me" />
-  </label>
-</div>
+<div class="max-w-[300px] mx-auto my-10">
+  <h1 class="text-center text-2xl"><b>Sign in to continue</b></h1>
+  
+  <div className="avatar mx-auto">
+    <div className="w-24 rounded-full">
+      <img class="w-24 block mx-auto mb-5" src="Image/user.png" alt="" />
+    </div>
+  </div>
+      
+  <form class="space-y-3" action="" method="POST" name="UserLogin" onsubmit="return ValidUser();">
+    <input type="text" class="input input-bordered block w-full" name="uname" placeholder="Enter User Name">
+    <input type="password" class="input input-bordered block w-full" name="Pass" placeholder="Password....">
+    <button class="btn btn-primary btn-block" type="submit">Sign in</button>
+    <div class="form-control">
+      <label class="label cursor-pointer">
+        <span class="label-text">Remember me</span> 
+        <input type="checkbox" class="checkbox checkbox-primary" value="remember-me" />
+      </label>
+    </div>
             
-                  <a href="ForgotPass.php" class="link">Forgot Password?</a><span class="clearfix"></span>
-                </form>
+  <a href="ForgotPass.php" class="link">Forgot Password?</a><span class="clearfix"></span>
+</form>
           
             
       
