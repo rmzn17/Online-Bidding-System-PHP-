@@ -4,21 +4,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bidding System</title>
-  <meta charset="utf-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-  <script src="bootstrap/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="CSS/UserUpdate.css">
-  <style type="text/css">
-    
-body {
-  
-font-family: Agency FB;
-}
-
-
-  </style>
+  <?php require_once "layout/head-content.php" ?>
 
 
 <script>
@@ -89,28 +75,7 @@ function validateCaseSensitiveEmail(email)
 <body>
 
 
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">Kinbo.Com</a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li ><a href="UserProfile.php"><b>&nbsp&nbsp&nbsp&nbspHome</b></a></li>
-  
-      <li><a href="UserPost.php"><b>Post</b></a></li>
-       <li><a href="MyPost.php"><b>MyPost</b></a></li>
-       <li><a href="MyBid.php"><b>MyBid</b></a></li>
-        <li class="active"><a href="UUpdate.php"><b>Update Profile</b></a></li>
-         <li><a href="Bidding.php"><b>Bidding</b></a></li>
-        <li><a href="UNotification.php"><b>Notification</b></a></li>
-    </ul>
-
-   <ul class="nav navbar-nav navbar-right">
-         <li><a href="ULogout.php"><span class="glyphicon glyphicon-user"></span> <b>Logout</b></a></li>
-     
-    </ul>
-  </div>
-</nav>
+<?php require_once "layout/auth-nav.php" ?>
 
 <?php
 $uName = $_SESSION['uname'];
@@ -170,24 +135,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 
-<div class="container">
-    <div class="row">
-        <div class="login">
-  <div class="login-triangle"></div>
-  
-  <h2 class="login-header">Update Profile</h2>
-  <form class="login-container" method="post" action="" name="ContactForm" onsubmit="return ValidateContactForm();">
 
-     <p><input type="text" name="Name" placeholder="Your Name"value="<?php echo $name; ?>"></p>
-    <p><input type="password" placeholder="New Password" name="Password"></p>
-    <p><input type="Email" name="Email" placeholder="Your Email" value="<?php echo $email; ?>"></p>
-    <p><input type="text" name="Phone" placeholder="Your Phone Number"value="<?php echo $phone; ?>"></p>
-    <p><input type="text" name="Address" placeholder="Your Address" value="<?php echo $address; ?>"></p>
-    <p><input type="submit" value="Update Now"></p>
+  
+  <h2 class="font-bold text-2xl mt-10 text-center">Update Profile</h2>
+  <form class="max-w-xl mx-auto flex flex-col gap-y-3 my-5" method="post" action="" name="ContactForm" onsubmit="return ValidateContactForm();">
+
+     <input class="input input-bordered w-full" type="text" name="Name" placeholder="Your Name"value="<?php echo $name; ?>">
+    <input class="input input-bordered w-full" type="password" placeholder="New Password" name="Password"></p>
+    <input class="input input-bordered w-full" type="Email" name="Email" placeholder="Your Email" value="<?php echo $email; ?>">
+    <input class="input input-bordered w-full" type="text" name="Phone" placeholder="Your Phone Number"value="<?php echo $phone; ?>">
+    <input class="input input-bordered w-full" type="text" name="Address" placeholder="Your Address" value="<?php echo $address; ?>">
+    <input class="btn btn-primary btn-block" type="submit" value="Update Now"></p>
   </form>
-</div>
-    </div>
-</div>
+
 
 
 </body>
