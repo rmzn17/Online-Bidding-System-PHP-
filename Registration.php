@@ -1,27 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head> 
-    <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-   <link rel="stylesheet" type="text/css" href="CSS/userReg.css">
-    <title>Bidding System</title>
-
-
-  <style>
-
- body {
-   
-   
-font-family: Agency FB;
-}
-
-
-
-</style>
+    <?php require_once "layout/head-content.php" ?>
 
 <script type="text/javascript">
   
@@ -170,156 +150,64 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 ?>
 
-  <nav class="navbar navbar-inverse" data-spy="affix" data-offset-top="197">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">Kinbo.Com</a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li><a href="Home.php"><b>&nbsp&nbsp&nbsp&nbspHome</b></a></li>
-      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><b>&nbsp&nbspProducts</b><span class="caret"></span></a>
-        <ul class="dropdown-menu">
-        <li><a href="Car.php"><b>Car</b></a></li>
-          <li><a href="Mobile.php"><b>Mobile</b></a></li>
-          <li><a href="Computer.php"><b>Computer</b></a></li>
-        </ul>
-         
-      </li>
-     
-     
-
-      <form class="navbar-form navbar-left">
-      <div class="input-group">
-        <input type="text" class="form-control" placeholder="Search" size="40">
-        <div class="input-group-btn">
-          <button class="btn btn-default" type="submit">
-            <i class="glyphicon glyphicon-search"></i>
-          </button>
-        </div>
-      </div>
-    </form>
-    </ul>
-  
-  
-   <ul class="nav navbar-nav navbar-right">
-   <li><a href="About Project.php"><b>About site</b></a></li>
-    <li><a href="Contact Us.php"><b>Contact Us</b></a></li>
-       <li  class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><b>User Login</b><span class="caret"></span></a>
-        <ul class="dropdown-menu">
-         <li><a href="UserLogin.php"><b>User Login</b></a></li>
-          <li><a href="AdminLogin.php"><b>Admin Login</b></a></li>
-        </ul>
-      </li>
-      <li class="active"><a href="Registration.php"><span class="glyphicon glyphicon-user"></span> <b>Sign Up</b></a></li>
-     
-    </ul>
-  </div>
-</nav>
+  <?php require_once("layout/nav.php") ?>
   
 
-    <div class="container">
-      <div class="row main">
-        <div class="main-login main-center">
-        <h3>User Registration Form</h5>
-          <form method="POST"  enctype="multipart/form-data" name="Registerform"  onsubmit="return RegisterValid();" >
+    <div class="max-w-[400px] mx-auto my-10">
+      
+        <h3 class="text-center text-2xl">User Registration Form</h5>
+          <form class="space-y-4" method="POST"  enctype="multipart/form-data" name="Registerform"  onsubmit="return RegisterValid();" >
             
-            <div class="form-group">
-              
-              <div class="cols-sm-10">
-                <div class="input-group">
-                  <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-                  <input type="text" class="form-control" name="name" id="name"  placeholder="Enter your Name"/>
-                </div>
-              </div>
+            <div class="">             
+                  <input type="text" class="input input-bordered w-full" name="name" id="name"  placeholder="Enter your Name"/>
             </div>
-              <div class="form-group">
-              
-              <div class="cols-sm-10">
-                <div class="input-group">
-                  <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-                  <input type="text" class="form-control" name="uname" id="uname"  placeholder="Enter your User Name"/>
-                </div>
-              </div>
+            <div class="form-group">
+              <input type="text" class="input input-bordered w-full" name="uname" id="uname"  placeholder="Enter your User Name"/>
             </div>
 
             <div class="form-group">
-              
-              <div class="cols-sm-10">
-                <div class="input-group">
-                  <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-                  <input type="password" class="form-control" name="password" id="password"  placeholder="Enter your Password"/>
-                </div>
-              </div>
+              <input type="password" class="input input-bordered w-full" name="password" id="password"  placeholder="Enter your Password"/>
             </div>
 
 
             <div class="form-group">
-              
-              <div class="cols-sm-10">
-                <div class="input-group">
-                  <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-                  <input type="text" class="form-control" name="email" id="email"  placeholder="Enter your Email"/>
-                </div>
-              </div>
+              <input type="text" class="input input-bordered w-full" name="email" id="email"  placeholder="Enter your Email"/>
             </div>
 
             <div class="form-group">
-              
-              <div class="cols-sm-10">
-                <div class="input-group">
-                  <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-                  <input type="text" class="form-control" name="phone"  placeholder="Enter your Phone Number"/>
-                </div>
-              </div>
+              <input type="text" class="input input-bordered w-full" name="phone"  placeholder="Enter your Phone Number"/>
             </div>
               
 
-                        <div class="form-group">
-              
-              <div class="cols-sm-10">
-                <div class="input-group">
-                  <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-                  <input type="date" class="form-control" name="dob"/>
-                </div>
-              </div>
+            <div class="form-group">
+              <input type="date" class="input input-bordered w-full" name="dob"/>
             </div>
 
-                        <div class="form-group">
-              
-              <div class="cols-sm-10">
-                <div class="input-group">
-                  <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-                  <input type="text" class="form-control" name="address" placeholder="Your Address" />
-                </div>
-              </div>
+            <div class="form-group">
+              <input type="text" class="input input-bordered w-full" name="address" placeholder="Your Address" />
             </div>
-                            <div class="form-group">
-              <label  class="cols-sm-2 control-label">Your Gender</label>
-              <div class="cols-sm-10">
-                <div class="input-group">
-                  
-                  <input type="radio" name="gender" value="Male" />Male
-                  <input type="radio" name="gender" value="Female" />Female
+            <div class="form-group">
+              <label  class="font-bold">Your Gender</label>
+                <div class="flex items-center gap-2">
+                  <input class="radio checked:bg-primary" type="radio" name="gender" value="Male" />Male
+                  <input class="radio checked:bg-primary" type="radio" name="gender" value="Female" />Female
                 </div>
-              </div>
             </div>
-              <div class="form-group">
-              <label class="cols-sm-2 control-label">Your Profile Picture</label>
-              <div class="cols-sm-10">
-                <div class="input-group">
-                
-                  <input type="file" name="image">
-                </div>
-              </div>
+             
+            
+            <div class="flex flex-col">
+              <label class="font-bold">Your Profile Picture</label>
+              <input type="file" name="image" class="file-input file-input-bordered file-input-primary w-full " />
             </div>
+            
 
-            <div class="form-group ">
-              <input  type="submit" id="button" class="btn btn-primary btn-lg btn-block login-button">
+
+            <div class="">
+              <input  type="submit" id="button" class="btn btn-primary btn-block">
             </div>
             
           </form>
-        </div>
-      </div>
+      
     </div>
 
   
