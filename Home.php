@@ -29,7 +29,7 @@ while ($row = mysqli_fetch_array($result)) {
       $ProductName = $row['ProductName'];
 
       $message = "Sorry Mr." . $seller . ", Your Product " . $ProductName . " Remain Unsold  No one bid your product";
-      $query1 = "insert into Notification values('$seller','$message','No')";
+      $query1 = "insert into Notification (UserName, Message, seen) values('$seller','$message','No')";
       mysqli_query($connection, $query1);
 
     } else {
@@ -119,7 +119,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 
-<div class="flex flex-wrap">
+<div class="flex flex-wrap mx-10 mt-5">
 
 
 
@@ -144,17 +144,17 @@ while ($row = mysqli_fetch_array($Result)) {
   if ($sdate <= $datenow) {
     ?>
 
-                                                                <div class="card w-96 bg-base-100 shadow-xl">
-                                                                      <figure><img src=<?php echo $row['Image'] ?> alt="Shoes" /></figure>
-                                                                      <div class="card-body">
-                                                                        <h2 class="card-title"><?php echo $row['ProductName'] ?></h2>
-                                                                        <p><?php echo $row['Description'] ?></p>
-                                                                        <div class="card-actions justify-end">
-                                                                          <a href="javascript:bid(<?php echo $row[0]; ?>)" class="btn btn-primary">Bid Now</a>
-                                                                        </div>
-                                                                      </div>
-                                                                    </div>
-                                  <?php } ?>
+          <div class="card w-96 bg-base-100 shadow-xl">
+            <figure><img class="h-[200px] object-contain" src="<?php echo $row['Image'] ?>" alt="Shoes" /></figure>
+            <div class="card-body">
+              <h2 class="card-title"><?php echo $row['ProductName'] ?></h2>
+              <p><?php echo $row['Description'] ?></p>
+              <div class="card-actions justify-end">
+                <a href="javascript:bid(<?php echo $row[0]; ?>)" class="btn btn-primary">Bid Now</a>
+              </div>
+            </div>
+          </div>
+        <?php } ?>
 <?php } ?>
      
 
@@ -162,7 +162,7 @@ while ($row = mysqli_fetch_array($Result)) {
 
 
 
-<div class="container px-10 mx-auto">
+<div class="container px-10 mx-auto mt-20">
 
   <h2 class="text-center text-2xl">Sold Product Here</h2>
 <div class="flex flex-wrap">
@@ -178,20 +178,20 @@ while ($row = mysqli_fetch_array($Result)) {
 
        ?>
 
-            <div class="card w-96 bg-base-100 shadow-xl">
-              <figure><img src=<?php echo $row['Image']; ?> alt="Shoes" /></figure>
-              <div class="card-body">
-                <h2 class="card-title">
-                  <?php echo $row['ProductName']; ?>
-                  <div class="badge badge-secondary">SOLD</div>
-                </h2>
-                <p><?php echo $row['Description'] ?></p>
-                <div class="card-actions justify-end">
-                  <div class="badge badge-outline"><?php echo $row['Price'] ?></div> 
-                  <!-- <div class="badge badge-outline">SOLD</div> -->
+                <div class="card w-96 bg-base-100 shadow-xl">
+                  <figure><img class="h-[250px] object-contain" src="<?php echo $row['Image']; ?>" alt="Shoes" /></figure>
+                  <div class="card-body">
+                    <h2 class="card-title">
+                      <?php echo $row['ProductName']; ?>
+                      <div class="badge badge-secondary">SOLD</div>
+                    </h2>
+                    <p><?php echo $row['Description'] ?></p>
+                    <div class="card-actions justify-end">
+                      <div class="badge badge-outline"><?php echo $row['Price'] ?></div> 
+                      <!-- <div class="badge badge-outline">SOLD</div> -->
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
                                          
                               
       <?php } ?>
