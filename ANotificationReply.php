@@ -1,4 +1,4 @@
-<?php  session_start() ?>
+<?php session_start() ?>
 
 <!DOCTYPE html>
 <head>
@@ -18,39 +18,38 @@ body {padding-top:20px;}
 
 
 
-<?php 
-if ($_SERVER["REQUEST_METHOD"] == "POST") 
-{
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-     $Server="localhost";
-     $username="root";
-     $psrd="";
-     $dbname = "Bidding";
-     $connection= mysqli_connect($Server,$username,$psrd,$dbname); 
-      $name=$_GET['reply'];
-      //echo $name;
+  $Server = "localhost";
+  $username = "root";
+  $psrd = "";
+  $dbname = "Bidding";
+  $connection = mysqli_connect($Server, $username, $psrd, $dbname);
+  $name = $_GET['reply'];
+  //echo $name;
 
-      $msg=$_POST['message'];
-      $temp="This is Reply From Admin, ";
+  $msg = $_POST['message'];
+  $temp = "This is Reply From Admin, ";
 
-      $message=$temp.$msg;
-      
-     // echo $message;
+  $message = $temp . $msg;
 
-      $query="insert into Notification values('$name','$message','No')";
-      mysqli_query($connection,$query);
+  // echo $message;
 
-         $qry="delete from ANotification where Name='$name'";
-            mysqli_query($connection,$qry);
-       header('Location:AdminMagane.php');
+  $query = "insert into Notification (Name, Message, Seen) values('$name','$message','No')";
+  mysqli_query($connection, $query);
+
+  $qry = "delete from ANotification where Name='$name'";
+  mysqli_query($connection, $qry);
+  header('Location:AdminMagane.php');
 
 
-    }
+}
 ?>
 
 
 <div class="container">
-	<div class="row">
+  <div class="row">
       <div class="col-md-6 col-md-offset-3">
         <div class="well well-sm">
           <form class="form-horizontal" action="" method="post">
@@ -73,7 +72,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
           </form>
         </div>
       </div>
-	</div>
+  </div>
 </div>
 </body>
 </html> 

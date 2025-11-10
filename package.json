@@ -1,0 +1,26 @@
+{
+  "name": "bidding-system",
+  "version": "1.0.0",
+  "description": "An Online Auction, where users can sell or bid for products through the internet. \r Tools and Technology: PHP,MYSQL,JAVASCRIPT,BOOTSTRAP,HTML,CSS",
+  "main": "index.js",
+  "scripts": {
+    "tailwind:compile": "npx tailwindcss -i ./src/input.css -o ./css/main.css --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/durosly/Online-Bidding-System-PHP.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/durosly/Online-Bidding-System-PHP/issues"
+  },
+  "homepage": "https://github.com/durosly/Online-Bidding-System-PHP#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.2.7"
+  },
+  "dependencies": {
+    "daisyui": "^2.51.5"
+  }
+}
