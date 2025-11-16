@@ -1,21 +1,18 @@
 <?php
-if(isset($_GET['del']))
-{
-$email=$_GET['del'];
+if (isset($_GET['del'])) {
+    $email = $_GET['del'];
 
 
+    $Server = "localhost";
+    $username = "root";
+    $psrd = "";
+    $dbname = "Bidding";
+    $connection = mysqli_connect($Server, $username, $psrd, $dbname);
 
-   $Server="localhost";
-     $username="root";
-     $psrd="";
-     $dbname = "Bidding";
-     $connection= mysqli_connect($Server,$username,$psrd,$dbname); 
-
-   $query="delete from ANotification where Email='$email'";
-
+    $query = "delete from ANotification where Email='$email'";
 
 
-    mysqli_query($connection,$query);
+    mysqli_query($connection, $query);
     header('Location:ANotification.php');
 }
 ?>

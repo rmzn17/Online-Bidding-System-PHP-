@@ -1,29 +1,43 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>My CV</title>
-<style>
+<
+!
+DOCTYPE html >
 
-*{
+<
+html >
+
+<
+head >
+
+<
+title > My CV
+
+<
+/
+title >
+
+<
+style >
+* {
     margin: 0;
     padding: 0;
     outline: 0;
 }
 
-.templete
-{
+.templete {
     width: 1350px;
 }
-.clear{
+
+.clear {
     overflow: hidden;
 }
-.bodysection
-{
-  
+
+.bodysection {
+
 }
+
 .mainsection {
     background-color: lightgray;
-   width: 1000px;
+    width: 1000px;
     padding: 30PX;
     float: left;
     margin: 10px;
@@ -37,29 +51,36 @@
     float: right;
 }
 
-.Semisidebar h2
-{
-   background-color: #2E2E32;
-   padding: 8px;
-   color: white;
-   margin-bottom: 10px;
-   border-bottom: 5px solid #939499;
-   text-align: center;
+.Semisidebar h2 {
+    background-color: #2E2E32;
+    padding: 8px;
+    color: white;
+    margin-bottom: 10px;
+    border-bottom: 5px solid #939499;
+    text-align: center;
 }
-.Semisidebar p
-{
 
-}
-.Footer
-{
-
-}
-.Footer h2
-{
+.Semisidebar p {
 
 }
 
+.Footer {
 
-</style>
-</head>
-</html>
+}
+
+.Footer h2 {
+
+}
+
+
+<
+/
+style >
+
+<
+/
+head >
+
+<
+/
+html >

@@ -1,24 +1,24 @@
 .center {
-    margin-top:10px;   
+    margin-top: 10px;
 }
 
 .modal-header {
-  padding-bottom: 5px;
+    padding-bottom: 5px;
 }
 
 .modal-footer {
-      padding: 0;
-  }
+    padding: 0;
+}
 
 
 .modal-footer .btn-group button {
-  height:50px;
-  border-top-left-radius : 0;
-  border-top-right-radius : 0;
-  border: none;
-  border-right: 1px solid #ddd;
+    height: 50px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border: none;
+    border-right: 1px solid #ddd;
 }
-  
+
 .modal-footer .btn-group:last-child > button {
-  border-right: 0;
+    border-right: 0;
 }

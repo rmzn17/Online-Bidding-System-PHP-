@@ -1,13 +1,13 @@
-body, html{
-    background-color:#34515E;
-   font-family: Agency FB;
-    
+body, html {
+    background-color: #34515E;
+    font-family: Agency FB;
+
 
 }
 
-.register-form{
+.register-form {
     font-size: 16px;
-   left: 50%;
+    left: 50%;
     top: 50%;
     position: absolute;
     -webkit-transform: translate3d(-50%, -50%, 0);
@@ -15,50 +15,55 @@ body, html{
     transform: translate3d(-50%, -50%, 0);
 }
 
-.regbutton{    
+.regbutton {
     height: 46px;
     width: 430px;
-    background-color:tomato;
+    background-color: tomato;
     border-radius: 0px;
     font-size: 18px;
-    color:white;
+    color: white;
     border: none !important;
     margin-bottom: 5px;
 }
-.regbutton:hover{    
+
+.regbutton:hover {
     color: white;
-    background-color:#aa422f;
+    background-color: #aa422f;
 }
-.regbutton:active{    
+
+.regbutton:active {
     color: white;
-    background-color:#aa422f;
+    background-color: #aa422f;
 }
-.logbutton{    
+
+.logbutton {
     height: 50px;
     width: 200px;
-    background-color:yellowgreen;
+    background-color: yellowgreen;
     border-radius: 0px;
     font-size: 18px;
-    color:white;
+    color: white;
     border: none !important;
     margin-bottom: 5px;
 }
-.logbutton:hover{    
+
+.logbutton:hover {
     color: white;
-    background-color:darkolivegreen;
-}
-.logbutton:active{    
-    color: white;
-    background-color:darkolivegreen;
+    background-color: darkolivegreen;
 }
 
+.logbutton:active {
+    color: white;
+    background-color: darkolivegreen;
+}
 
 
-.register-form label{
+.register-form label {
     color: aliceblue;
-    
+
 }
-.register-form input{
+
+.register-form input {
     margin-bottom: 5px;
     width: 430px;
     height: 40px;
